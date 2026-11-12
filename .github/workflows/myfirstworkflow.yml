@@ -1,15 +1,17 @@
-name:myfirstworkflow
-# to get push on every workflow
+
+name: myfirstworkflow
+
+# Trigger workflow on every push
 on: push
 
 jobs:
-  job1
-  name: JOB1
-  runs on: ubuntu-slim
-  steps:
-   - name: Running my first workflow
-     run: echo "This is my first command"
-    - name: checking OS release
-      run: cat /etc/os-release
-      
-     
+  job1:
+    name: JOB1
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Running my first workflow
+        run: echo "This is my first command"
+
+      - name: Checking OS release
+        run: cat /etc/os-release
