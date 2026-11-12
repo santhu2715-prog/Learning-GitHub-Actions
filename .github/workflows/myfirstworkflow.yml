@@ -1,3 +1,13 @@
 name:myfirstworkflow
 # to get push on every workflow
 on:push
+
+jobs:
+  name: JOB1
+  runs on: ubuntu-slim
+  steps:
+   - name: Running my first workflow
+     run: echo "This is my first command"
+    - name: checking OS release
+      run: cat /etc/os-release
+     
