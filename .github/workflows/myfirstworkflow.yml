@@ -4,7 +4,7 @@ name: myfirstworkflow
 # Trigger workflow on every push
 on: push
 
-jobs: 
+jobs:
   job1:
     name: JOB1
     runs-on: ubuntu-latest
@@ -24,22 +24,20 @@ jobs:
       - name: Check hostname
         run: hostname
 
-   job3:
+  job3:
     name: JOB3
     needs: job1
     runs-on: ubuntu-latest
-    steps: 
-    - name: Runs with single deledancy
-      run: sleep 10
 
-   job4:
+    steps:
+      - name: Runs with single dependency
+        run: sleep 10
+
+  job4:
     name: JOB4
-    needs: [job1,job2,job3]
+    needs: [job1, job2, job3]
     runs-on: ubuntu-latest
-    steps: 
-    - name: Runs with Multiple deledancy
-      run: sleep 20   
-    
-          echo "Hi My name is Santosh"
-          echo "Current time is $(date)"
-          sleep 20
+
+    steps:
+      - name: Runs with multiple dependencies
+        run: sleep 20
