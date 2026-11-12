@@ -3,6 +3,7 @@ name:myfirstworkflow
 on:push
 
 jobs:
+  job1
   name: JOB1
   runs on: ubuntu-slim
   steps:
@@ -10,4 +11,5 @@ jobs:
      run: echo "This is my first command"
     - name: checking OS release
       run: cat /etc/os-release
+      
      
