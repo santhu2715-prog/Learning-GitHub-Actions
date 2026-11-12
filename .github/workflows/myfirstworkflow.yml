@@ -1,0 +1,3 @@
+name:myfirstworkflow
+# to get push on every workflow
+on:push
