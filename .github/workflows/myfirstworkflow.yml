@@ -15,12 +15,18 @@ jobs:
 
       - name: Checking OS release
         run: cat /etc/os-release
+
+jobs:
   job2:
-      - name: JOB2
-      runs-on: ubuntu-latest
-      run: hostname
-      - name: Running mutiple commands
+    name: JOB2
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check hostname
+        run: hostname
+
+      - name: Running multiple commands
         run: |
           echo "Hi My name is Santosh"
-          echo "current time is 'date'"
+          echo "Current time is $(date)"
           sleep 20
