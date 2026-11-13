@@ -12,10 +12,11 @@ jobs:
     steps:
       - name: Running my first workflow
         shell: pwsh
-        run: get-computerinfo
+        run: Get-ComputerInfo
 
-      - name: Checking OS release
-        run: cat /etc/os-release
+      - name: Checking Windows OS version
+        shell: pwsh
+        run: Get-CimInstance Win32_OperatingSystem | Select-Object Caption, Version
 
   job2:
     name: JOB2
