@@ -7,39 +7,19 @@ on: push
 jobs:
   job1:
     name: JOB1
-    runs-on: windows-latest
-
-    steps:
-      - name: Running my first workflow
-        shell: pwsh
-        run: Get-ComputerInfo
-
-      - name: Checking Windows OS version
-        shell: pwsh
-        run: Get-CimInstance Win32_OperatingSystem | Select-Object Caption, Version
-
-  job2:
-    name: JOB2
     runs-on: ubuntu-latest
-
     steps:
-      - name: Check hostname
-        run: hostname
-
-  job3:
-    name: JOB3
-    needs: job1
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Runs with single dependency
-        run: sleep 10
-
-  job4:
-    name: JOB4
-    needs: [job1, job2, job3]
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Runs with multiple dependencies
-        run: sleep 20
+      - name: step-1
+        run: |
+          pwd
+          ls -lrt
+          hostname
+      - name: step-2 checkout   
+        uses: actions/checkout@v5.1.0  
+      - name: step-3 
+         run: |
+          pwd
+          ls -lrt
+          hostname
+        
+    
