@@ -7,11 +7,13 @@ on: push
 jobs:
   job1:
     name: JOB1
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
 
     steps:
       - name: Running my first workflow
         run: echo "This is my first command"
+        shell: pwsh
+        run: get-computerinfo
 
       - name: Checking OS release
         run: cat /etc/os-release
