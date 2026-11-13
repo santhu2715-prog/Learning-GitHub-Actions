@@ -11,7 +11,6 @@ jobs:
 
     steps:
       - name: Running my first workflow
-        run: echo "This is my first command"
         shell: pwsh
         run: get-computerinfo
 
